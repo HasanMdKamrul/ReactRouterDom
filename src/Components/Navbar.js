@@ -32,6 +32,11 @@ export default function Navbar() {
                     Posts
                 </NavLink>
             </li>
+            <li>
+            <NavLink to="/dashboard" className = {({isActive})=> isActive? styles.NavBar : " "}>
+                    Dashboard
+                </NavLink>
+            </li>
         </ul>
     </div>
   )

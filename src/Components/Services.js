@@ -1,7 +1,7 @@
 
-export default function Services() {
+export default function Services({number}) {
     return (
-      <div>This is the Services Page</div>
+      <div>This is the Services Page {number}</div>
     )
   }
   
