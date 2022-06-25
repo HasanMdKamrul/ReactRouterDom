@@ -1,28 +1,35 @@
 import { NavLink } from 'react-router-dom';
+import styles from '../Assests/css/Navbar.module.css';
 
 
 export default function Navbar() {
-    let activeStyle = {
-        fontWeight: "bold",
-        color: "red", 
-        textDecoration: "none"
+    
+    const activeStyle = {
+        color: 'red',
+        textDecoration: 'none',
+        fontWeight: 'bold'
     }
   return (
     <div>
         <ul>
             <li>
-                <NavLink exact = "true" to="/" style = {({isActive})=> isActive? activeStyle: undefined }>
+                <NavLink  to="/" className={(navInfo)=> navInfo.isActive ? styles.NavBar : " "}>
                     Home
                 </NavLink>
             </li>
             <li>
-            <NavLink exact = "true" to="/about" style = {({isActive})=> isActive? activeStyle: undefined }>
+            <NavLink  to="/about" className={(navInfo)=> navInfo.isActive ? styles.NavBar : " "}>
                     About
                 </NavLink>
             </li>
             <li>
-            <NavLink exact = "true" to="/services" style = {({isActive})=> isActive? activeStyle: undefined }>
+            <NavLink to="/services" style = {(navInfo)=> navInfo.isActive? activeStyle: undefined}>
                     Services
+                </NavLink>
+            </li>
+            <li>
+            <NavLink to="/posts" className = {({isActive})=> isActive? styles.NavBar : " "}>
+                    Posts
                 </NavLink>
             </li>
         </ul>
